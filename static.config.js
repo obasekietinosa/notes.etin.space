@@ -1,5 +1,6 @@
 import axios from 'axios'
 import path from 'path'
+import { formatPosts } from './utils'
 // import { Post } from './types'
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
@@ -14,10 +15,10 @@ export default {
       {
         path: '/',
         getData: () => ({
-          posts,
+          posts: formatPosts(posts),
         }),
         children: posts.map((post /* : Post */) => ({
-          path: `/post/${post.id}`,
+          path: `/post/${post.slug}`,
           template: 'src/containers/Post',
           getData: () => ({
             post,
