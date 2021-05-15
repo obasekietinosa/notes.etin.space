@@ -7,12 +7,12 @@ import path from 'path'
 export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
   getRoutes: async () => {
-    const { data: posts } /* :{ data: Post[] } */ = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
+    const { data: {posts} } /* :{ data: Post[] } */ = await axios.get(
+      'https://public-api.wordpress.com/rest/v1.1/sites/etinsnotes.wordpress.com/posts/'
     )
     return [
       {
-        path: '/blog',
+        path: '/',
         getData: () => ({
           posts,
         }),

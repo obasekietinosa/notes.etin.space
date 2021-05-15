@@ -1,18 +1,23 @@
 import React from 'react'
+import { useRouteData } from 'react-static'
+import { Link } from '@reach/router'
+import { Post } from 'types'
 
-export default () => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>
-      Welcome to React-Static <br /> + TypeScript
-    </h1>
-    <p>
-      Learn{' '}
-      <a href="https://github.com/sw-yx/react-typescript-cheatsheet">
-        React + TypeScript
-      </a>
-    </p>
-    <p>
-      <a href="https://twitter.com/swyx">Report issues with this template</a>
-    </p>
-  </div>
-)
+export default () => {
+  const { posts }: { posts: Post[] } = useRouteData()
+
+  return (
+    <div>
+      <h1>It's blog time.</h1>
+      <br />
+      All Posts:
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>
+            <Link to={`/blog/post/${post.id}/`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
