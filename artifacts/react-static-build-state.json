@@ -1,0 +1,66 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": null,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "silent": false,
+  "entry": "/Users/etin/Work/notes/src/index.tsx",
+  "plugins": [
+    "react-static-plugin-tailwindcss",
+    "react-static-plugin-typescript",
+    [
+      "/Users/etin/Work/notes/node_modules/react-static-plugin-source-filesystem/node.api.js",
+      {
+        "location": "/Users/etin/Work/notes/src/pages"
+      }
+    ],
+    "/Users/etin/Work/notes/node_modules/react-static-plugin-reach-router/browser.api.js",
+    "/Users/etin/Work/notes/node_modules/react-static-plugin-sitemap/dist/node.api.js",
+    "/Users/etin/Work/notes"
+  ],
+  "paths": {
+    "ROOT": "/Users/etin/Work/notes",
+    "SRC": "/Users/etin/Work/notes/src",
+    "DIST": "/Users/etin/Work/notes/dist",
+    "ASSETS": "/Users/etin/Work/notes/dist",
+    "PLUGINS": "/Users/etin/Work/notes/plugins",
+    "TEMP": "/Users/etin/Work/notes/tmp",
+    "ARTIFACTS": "/Users/etin/Work/notes/artifacts",
+    "PUBLIC": "/Users/etin/Work/notes/public",
+    "NODE_MODULES": "/Users/etin/Work/notes/node_modules",
+    "EXCLUDE_MODULES": "/Users/etin/Work/notes/node_modules",
+    "PACKAGE": "/Users/etin/Work/notes/package.json",
+    "HTML_TEMPLATE": "/Users/etin/Work/notes/dist/index.html",
+    "STATIC_DATA": "/Users/etin/Work/notes/dist/staticData"
+  },
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
