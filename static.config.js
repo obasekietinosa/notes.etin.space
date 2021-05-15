@@ -10,14 +10,15 @@ export default {
   getRoutes: async () => {
     const { data: {posts} } /* :{ data: Post[] } */ = await axios.get(
       'https://public-api.wordpress.com/rest/v1.1/sites/etinsnotes.wordpress.com/posts/'
-    )
+    );
+    const formattedPosts = formatPosts(posts);
     return [
       {
         path: '/',
         getData: () => ({
-          posts: formatPosts(posts),
+          formattedPosts,
         }),
-        children: posts.map((post /* : Post */) => ({
+        children: formattedPosts.map((post /* : Post */) => ({
           path: `/post/${post.slug}`,
           template: 'src/containers/Post',
           getData: () => ({
