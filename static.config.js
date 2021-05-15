@@ -16,7 +16,7 @@ export default {
       {
         path: '/',
         getData: () => ({
-          formattedPosts,
+          posts: formattedPosts,
         }),
         children: formattedPosts.map((post /* : Post */) => ({
           path: `/post/${post.slug}`,
