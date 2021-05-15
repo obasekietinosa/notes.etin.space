@@ -27,6 +27,7 @@ export default {
     ]
   },
   plugins: [
+    'react-static-plugin-tailwindcss',
     'react-static-plugin-typescript',
     [
       require.resolve('react-static-plugin-source-filesystem'),
