@@ -7,11 +7,11 @@ import { siteConfig } from "../../utils";
 export default () => {
   const { post }: { post: Post } = useRouteData();
   const content = post.content
-    .replaceAll("<h2", '<h2 class="text-2xl font-bold mb-4"')
-    .replaceAll("<h4", '<h4 class="text-lg font-semibold mb-4"')
-    .replaceAll("<p", '<p class="text-base mb-4"')
-    .replaceAll(
-      "<a",
+    .replace(/<h2/g, '<h2 class="text-2xl font-bold mb-4"')
+    .replace(/<h4/g, '<h4 class="text-lg font-semibold mb-4"')
+    .replace(/<p/g, '<p class="text-base mb-4"')
+    .replace(
+      /<a/g,
       `<a 
         target="_blank"
         rel="noreferrer noopener"
