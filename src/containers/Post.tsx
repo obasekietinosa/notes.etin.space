@@ -26,7 +26,7 @@ export default () => {
       <div>
         <Link to="/">{"<"} Back</Link>
         <br />
-        <h3>{post.title}</h3>
+        <h1 className="text-2xl mb-4">{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </>

@@ -14,7 +14,7 @@ export const formatPost = (data) => ({
   image: data.featured_image?.length ? data.featured_image : `https://services.etin.space/notes/generate-image/?title=${encodeURI(data.title)}`,
   categoryId: (Object.values(data.terms.category)[0])?.ID,
   categoryName: (Object.values(data.terms.category)[0])?.name,
-  excerpt: data.excerpt,
+  excerpt: he.decode(data.excerpt),
   content: data.content,
   author: formatAuthor(data.author),
   slug: data.slug,

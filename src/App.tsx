@@ -21,7 +21,7 @@ function App() {
         <nav className="flex flex-col md:flex-row justify-between items-center px-8 py-4">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h1 className="text-2xl">
-              <Link to="/">Etin's Notes</Link>
+              <Link to="/">Etin's Notes.</Link>
             </h1>
             <p className="text-xs">A collection of my scribblings</p>
           </div>
