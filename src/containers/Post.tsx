@@ -26,7 +26,8 @@ export default () => {
           hover:bg-transparent 
           hover:text-black"
       `
-    );
+    )
+    .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"');
 
   return (
     <>
