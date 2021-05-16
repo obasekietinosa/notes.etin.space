@@ -3,6 +3,7 @@ import { Root, Routes, addPrefetchExcludes, Head } from "react-static";
 import { Link, Router } from "@reach/router";
 import Dynamic from "containers/Dynamic";
 import "./app.css";
+import { ScrollToTop } from "components/ScrollToTop";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
@@ -36,10 +37,12 @@ function App() {
       </header>
       <div className="px-8 md:px-24 lg:px-48">
         <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            <Dynamic path="dynamic" />
-            <Routes path="*" />
-          </Router>
+          <ScrollToTop path="/">
+            <Router primary={false}>
+                <Dynamic path="dynamic" />
+                <Routes path="*" />
+            </Router>
+          </ScrollToTop>
         </React.Suspense>
       </div>
     </Root>
