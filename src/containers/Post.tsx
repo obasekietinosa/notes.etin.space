@@ -27,6 +27,7 @@ export default () => {
           hover:text-black"
       `
     )
+    .replace(/<img/g, '<img class="border-black border"')
     .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"');
 
   return (
