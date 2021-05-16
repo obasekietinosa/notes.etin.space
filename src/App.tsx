@@ -27,24 +27,38 @@ function App() {
             <p className="text-xs">A collection of my scribblings</p>
           </div>
           <div className="flex justify-between w-full md:w-1/2 lg:w-1/3">
-            <Link className="text-black hover:text-opacity-60" to="/">Home</Link>
-            <Link className="text-black hover:text-opacity-60" to="/about">Categories</Link>
-            <Link className="text-black hover:text-opacity-60" to="/blog">Twitter</Link>
-            <Link className="text-black hover:text-opacity-60" to="/blog">Github</Link>
+            <Link className="text-black hover:text-opacity-60" to="/">
+              Home
+            </Link>
+            <Link className="text-black hover:text-opacity-60" to="/about">
+              Categories
+            </Link>
+            <Link className="text-black hover:text-opacity-60" to="/blog">
+              Twitter
+            </Link>
+            <Link className="text-black hover:text-opacity-60" to="/blog">
+              Github
+            </Link>
           </div>
         </nav>
         <hr />
       </header>
-      <div className="px-8 md:px-24 lg:px-48">
+      <main className="px-8 md:px-24 lg:px-48">
         <React.Suspense fallback={<em>Loading...</em>}>
           <ScrollToTop path="/">
             <Router primary={false}>
-                <Dynamic path="dynamic" />
-                <Routes path="*" />
+              <Dynamic path="dynamic" />
+              <Routes path="*" />
             </Router>
           </ScrollToTop>
         </React.Suspense>
-      </div>
+      </main>
+      <footer className="bg-gray-300 text-center py-4 px-8 md:px-24 lg:px-48">
+        &copy; 2021, Etinosa Obaseki. Made With ❤️.{" "}
+        <a className="underline" href="github.com/obasekietinosa/notes.etin.space">
+          Explore this repository
+        </a>
+      </footer>
     </Root>
   );
 }
