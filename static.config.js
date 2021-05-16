@@ -9,7 +9,7 @@ export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
   getRoutes: async () => {
     const { data: {posts} } /* :{ data: Post[] } */ = await axios.get(
-      'https://public-api.wordpress.com/rest/v1.1/sites/etinsnotes.wordpress.com/posts/'
+      'https://public-api.wordpress.com/rest/v1.1/sites/etinsnotes.wordpress.com/posts/?number=50'
     );
     const formattedPosts = formatPosts(posts);
     return [
