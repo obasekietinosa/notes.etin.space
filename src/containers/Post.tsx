@@ -11,7 +11,7 @@ export default () => {
   const content = post.content
     .replace(/<h2/g, '<h2 class="text-2xl font-bold mb-4"')
     .replace(/<h4/g, '<h4 class="text-lg font-semibold mb-4"')
-    .replace(/<p>/g, '<p class="text-base mb-4">')
+    .replace(/<p>/g, '<p class="text-base leading-loose mb-4">')
     .replace(
       /<a/g,
       `<a 
