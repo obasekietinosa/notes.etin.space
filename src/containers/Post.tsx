@@ -62,7 +62,7 @@ export default () => {
         <Link to="/">{"<"} Back</Link>
         <br />
         <h1 className="text-2xl mb-4">{post.title}</h1>
-        <div className="overflow-y-hidden" dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="overflow-x-hidden" dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </>
   );
