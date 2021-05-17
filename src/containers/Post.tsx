@@ -6,10 +6,12 @@ import { siteConfig } from "../../utils";
 
 export default () => {
   const { post }: { post: Post } = useRouteData();
+  console.log(post.content);
+  
   const content = post.content
     .replace(/<h2/g, '<h2 class="text-2xl font-bold mb-4"')
     .replace(/<h4/g, '<h4 class="text-lg font-semibold mb-4"')
-    .replace(/<p/g, '<p class="text-base mb-4"')
+    .replace(/<p>/g, '<p class="text-base mb-4">')
     .replace(
       /<a/g,
       `<a 
@@ -19,17 +21,18 @@ export default () => {
           transition duration-500 ease-in-out
           px-1 
           font-semibold
-          bg-gray-800 
-          text-white 
           border-gray-800 
-          hover:border-b 
-          hover:bg-transparent 
-          hover:text-black"
+          border-b
       `
     )
     .replace(/<img/g, '<img class="border-black border"')
-    .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"');
-
+    .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"')
+    .replace(/<pre/g, '<pre class="overflow-scroll bg-black text-white mb-4 p-4"')
+    .replace(/<code/g, '<code class="bg-black text-white px-2"')
+    ;
+    
+    console.log(content);
+    
   return (
     <>
       <Head>
@@ -59,7 +62,7 @@ export default () => {
         <Link to="/">{"<"} Back</Link>
         <br />
         <h1 className="text-2xl mb-4">{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="overflow-y-hidden" dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </>
   );
