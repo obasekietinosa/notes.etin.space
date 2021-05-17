@@ -22,7 +22,7 @@ export default () => {
             <h2 className="text-xl mb-4">
               <Link to={`/post/${post.slug}/`}>{post.title}</Link>
             </h2>
-            <p className="inline-block p-1 text-sm mb-4 border-black border italic">{post.categoryName}</p>
+            <p className="inline-block p-1 text-xs mb-4 border-black border italic">{post.categoryName}</p>
             <div
               className="text-gray-600 text-sm"
               dangerouslySetInnerHTML={{
