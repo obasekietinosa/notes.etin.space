@@ -5,7 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ["Lato", "ui-sans-serif", "system-ui"],
       serif: ["Merriweather", "ui-serif", "Georgia"],
-      mono: ["ui-monospace"],
+      mono: ["monospace"],
     },
     extend: {
       colors: {

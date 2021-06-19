@@ -28,8 +28,8 @@ export default () => {
     )
     .replace(/<img/g, '<img class="border-black border md:max-w-xs my-4 mx-auto"')
     .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"')
-    .replace(/<pre/g, '<pre class="overflow-scroll bg-black text-white mb-4 p-4"')
-    .replace(/<code/g, '<code class="bg-black text-white px-2"')
+    .replace(/<pre/g, '<pre class="overflow-scroll bg-black font-mono text-white mb-4 p-4"')
+    .replace(/<code/g, '<code class="bg-black font-mono text-white px-2"')
     ;
     
   return (
