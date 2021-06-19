@@ -6,6 +6,8 @@ declare module "utils" {
     description: string;
   };
 
+  export function formatDate(date: string): string;
+
   export function formatPosts(posts: any[]): Post[];
 
   export function formatPost(data: any): Post;

@@ -1,17 +1,19 @@
 import React from "react";
 import { Head, useRouteData } from "react-static";
-import { Link } from "@reach/router";
 import { Post } from "types";
-import { siteConfig } from "../../utils";
+import { formatDate, siteConfig } from "../../utils";
+import Layout from "components/Layout";
 
 export default () => {
   const { post }: { post: Post } = useRouteData();
   console.log(post.content);
   
   const content = post.content
-    .replace(/<h2/g, '<h2 class="text-2xl font-bold mb-4"')
-    .replace(/<h4/g, '<h4 class="text-lg font-semibold mb-4"')
-    .replace(/<p>/g, '<p class="text-base leading-loose mb-4">')
+    .replace(/<h1/g, '<h2 class="font-serif text-2xl font-bold mb-4"')
+    .replace(/<h2/g, '<h2 class="font-serif text-2xl font-bold mb-4"')
+    .replace(/<h3/g, '<h3 class="font-serif text-2xl font-bold mb-4"')
+    .replace(/<h4/g, '<h4 class="text-lg italic mb-4"')
+    .replace(/<p>/g, '<p class="text-base text-brand-gray-dark leading-loose mb-4">')
     .replace(
       /<a/g,
       `<a 
@@ -25,16 +27,14 @@ export default () => {
           border-b
       `
     )
-    .replace(/<img/g, '<img class="border-black border"')
+    .replace(/<img/g, '<img class="border-black border md:max-w-xs my-4 mx-auto"')
     .replace(/<figcaption/g, '<figcaption class="text-sm mt-2 mb-4 pb-2 text-center border-b"')
     .replace(/<pre/g, '<pre class="overflow-scroll bg-black text-white mb-4 p-4"')
     .replace(/<code/g, '<code class="bg-black text-white px-2"')
     ;
     
-    console.log(content);
-    
   return (
-    <>
+    <Layout>
       <Head>
         <title>
           {post.title} - {siteConfig.title}
@@ -58,12 +58,12 @@ export default () => {
         <meta name="twitter:image" content={post.image} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div>
-        <Link to="/">{"<"} Back</Link>
-        <br />
-        <h1 className="text-2xl mb-4">{post.title}</h1>
+      <div className="md:pr-24">
+        <h1 className="font-serif font-bold text-2xl md:text-4xl mb-4">{post.title}</h1>
+        <p className="text-brand-gray-dark mb-4">{formatDate(post.datePublished)}</p>
+        <p className="text-brand mb-4">By {post.author.name}</p>
         <div className="overflow-x-hidden" dangerouslySetInnerHTML={{ __html: content }} />
       </div>
-    </>
+    </Layout>
   );
 };

@@ -6,6 +6,15 @@ export const siteConfig = {
     "A Seed, learning to become a Tree. I write about the experiences that shape me.",
 };
 
+export const formatDate = (date) => (
+  new Date(date).toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+)
+
 export const formatPosts = (posts) => posts.map(formatPost);
 
 export const formatPost = (data) => ({
