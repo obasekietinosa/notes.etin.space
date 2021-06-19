@@ -6,14 +6,16 @@ export const siteConfig = {
     "A Seed, learning to become a Tree. I write about the experiences that shape me.",
 };
 
-export const formatDate = (date) => (
+export const formatDate = (date) =>
   new Date(date).toLocaleString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-  })
-)
+  });
+
+export const getBannerImage = (text) =>
+  `https://services.etin.space/notes/generate-image/?title=${encodeURI(text)}`;
 
 export const formatPosts = (posts) => posts.map(formatPost);
 
@@ -23,9 +25,7 @@ export const formatPost = (data) => ({
   datePublished: data.date,
   image: data.featured_image?.length
     ? data.featured_image
-    : `https://services.etin.space/notes/generate-image/?title=${encodeURI(
-        data.title
-      )}`,
+    : getBannerImage(data.title),
   categoryId: Object.values(data.terms.category)[0]?.ID,
   categoryName: Object.values(data.terms.category)[0]?.name,
   excerpt: he.decode(data.excerpt),

@@ -6,7 +6,6 @@ import Layout from "components/Layout";
 
 export default () => {
   const { post }: { post: Post } = useRouteData();
-  console.log(post.content);
   
   const content = post.content
     .replace(/<h1/g, '<h2 class="font-serif text-2xl font-bold mb-4"')
