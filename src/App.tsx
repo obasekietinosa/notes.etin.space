@@ -62,7 +62,7 @@ function App() {
           &copy; 2021, Etinosa Obaseki. Made With ❤️.{" "}
           <a
             className="underline"
-            href="github.com/obasekietinosa/notes.etin.space"
+            href="https://github.com/obasekietinosa/notes.etin.space"
           >
             Explore this repository
           </a>
