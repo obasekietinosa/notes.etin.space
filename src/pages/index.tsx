@@ -44,7 +44,7 @@ export default () => {
                 <div
                   className="text-gray-600 text-base mb-4"
                   dangerouslySetInnerHTML={{
-                    __html: siteConfig.description,
+                    __html: post.excerpt,
                   }}
                 />
                 <div className="flex items-center text-brand text-sm gap-3">
