@@ -24,6 +24,7 @@ export default () => {
           font-semibold
           border-gray-800 
           border-b
+        "
       `
     )
     .replace(/<img/g, '<img class="border-black border md:max-w-xs my-4 mx-auto"')
