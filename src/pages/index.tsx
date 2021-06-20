@@ -11,26 +11,15 @@ export default () => {
   return (
     <Layout>
       <Head>
-        <title>
-          {siteConfig.title}
-        </title>
+        <title>{siteConfig.title}</title>
         <meta name="description" content={siteConfig.description} />
-        <meta
-          property="og:title"
-          content={`${siteConfig.title}`}
-        />
+        <meta property="og:title" content={`${siteConfig.title}`} />
         <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content={getBannerImage('Etin\'s Notes')} />
-        <meta
-          property="og:url"
-          content={`https://notes.etin.space/`}
-        />
-        <meta
-          name="twitter:title"
-          content={`${siteConfig.title}`}
-        />
+        <meta property="og:image" content={getBannerImage("Etin's Notes")} />
+        <meta property="og:url" content={`https://notes.etin.space/`} />
+        <meta name="twitter:title" content={`${siteConfig.title}`} />
         <meta name="twitter:description" content={siteConfig.description} />
-        <meta name="twitter:image" content={getBannerImage('Etin\'s Notes')} />
+        <meta name="twitter:image" content={getBannerImage("Etin's Notes")} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <ul className="list-none">
